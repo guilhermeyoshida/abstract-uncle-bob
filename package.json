@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/guilhermeyoshida/sturdy-enigma/issues"
   },
-  "homepage": "https://github.com/guilhermeyoshida/sturdy-enigma#readme",
-  "devDependencies": {
-    "typescript": "^4.7.4"
-  }
+  "homepage": "https://github.com/guilhermeyoshida/sturdy-enigma#readme"
 }
