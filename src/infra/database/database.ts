@@ -4,10 +4,10 @@ const pgp = pgPromise({});
 
 const db = pgp({
     user: "postgres",
-    password: "",
+    password: "changeme",
     host: "localhost",
     port: 5432,
-    database: "app",
+    database: "postgres",
     idleTimeoutMillis: 100
 });
 

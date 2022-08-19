@@ -1,0 +1,31 @@
+CREATE TABLE example.parking_lot (
+	code varchar(45),
+	capacity int,
+	open_hour int,
+	close_hour int
+); 
+
+INSERT INTO example.parking_lot (code, capacity, open_hour, close_hour)
+VALUES ('shopping', 5, 8, 22);
+
+CREATE TABLE example.parked_car (
+	plate varchar(45),
+	code varchar(45),
+	enter_date Date,
+	leave_date Date
+);
+
+INSERT INTO example.parked_car (plate, code, enter_date, leave_date)
+VALUES ('MMM-0001', 'shopping', '2020-12-01T10:00:00', null);
+INSERT INTO example.parked_car (plate, code, enter_date, leave_date)
+VALUES ('MMM-0002', 'shopping', '2020-12-01T10:00:00', null);
+INSERT INTO example.parked_car (plate, code, enter_date, leave_date)
+VALUES ('MMM-0003', 'shopping', '2020-12-01T10:00:00', null);
+INSERT INTO example.parked_car (plate, code, enter_date, leave_date)
+VALUES ('MMM-0004', 'shopping', '2020-12-01T10:00:00', null);
+INSERT INTO example.parked_car (plate, code, enter_date, leave_date)
+VALUES ('MMM-0005', 'shopping', '2020-12-01T10:00:00', null);
+
+ALTER TABLE example.parked_car DROP COLUMN enter_date;
+ALTER TABLE example.parked_car DROP COLUMN leave_date;
+ALTER TABLE example.parked_car ADD COLUMN date timestamp;
