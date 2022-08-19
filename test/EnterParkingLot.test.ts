@@ -15,11 +15,10 @@ test("Should enter parking lot", async () => {
     const enterParkingLot = new EnterParkingLot(parkingLotRepositorySQL);
     const getParkingLot = new GetParkingLot(parkingLotRepositorySQL)
     const parkingLotBeforeEnter = await getParkingLot.execute("shopping");
-    console.log(parkingLotBeforeEnter)
-    // expect(parkingLotBeforeEnter.occupiedSpaces).toBe(0);
-    // await enterParkingLot.execute("shopping", "MMM-0001", new Date("2022-08-18T18:00:00"));
-    // const parkingLotAfterEnter = await getParkingLot.execute("shopping");
-    // expect(parkingLotAfterEnter.occupiedSpaces).toBe(1);
+    expect(parkingLotBeforeEnter.occupiedSpaces).toBe(0);
+    await enterParkingLot.execute("shopping", "MMM-0001", new Date("2022-08-18T18:00:00"));
+    const parkingLotAfterEnter = await getParkingLot.execute("shopping");
+    expect(parkingLotAfterEnter.occupiedSpaces).toBe(1);
 });
 
 test.skip("Should be full", async () => {
